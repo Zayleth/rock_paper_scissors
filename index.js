@@ -13,38 +13,33 @@ function getComputerChoice(options) {
 
 function getHumanChoice() {
   let humanChoice = prompt ("rock, paper, scissors: ");
-  return humanChoice.slice([0]).toLowerCase();
+  return humanChoice.toLowerCase();
 }
 
 // Paso 4: declarar las variables globales de puntuación de los jugadores
 // Tu juego realizará un seguimiento de la puntuación de los jugadores. Escribirás variables para realizar un seguimiento de la puntuación de los jugadores.
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 // Paso 5: Escribe la lógica para jugar una sola ronda.
 // rock > scissors
 // scissors > paper
 // paper > rock
 
-let computerChoice = getComputerChoice(options);
-let humanChoice = getHumanChoice();
+// let computerChoice = getComputerChoice(options);
+// let humanChoice = getHumanChoice();
 
-function playRound (computerChoice, humanChoice, round_counter) {
+function playRound (computerChoice, humanChoice) {
   if (computerChoice === humanChoice) {
-    computerScore++;
-    humanScore++;
     return("Oh! It is a tie");
   
   } else if (humanChoice === "rock" && computerChoice === "scissors" 
   || humanChoice === "scissors" && computerChoice == "paper" 
   || humanChoice === "paper" && computerChoice === "rock") {
 
-    humanScore++;
     return("Nice! You win ;)");
 
   } else {
-    computerScore++;
     return("You lost dude ");
   }
 }
@@ -63,21 +58,37 @@ para que se declaren dentro de la nueva playGamefunción
 let round_counter = 0; // para llevar el conteo de rondas
 
 function playGame (playRound) {
+  let humanScore = 0;
+  let computerScore = 0;
   
   while (round_counter < 5) {
+    let round = playRound(getHumanChoice(), getComputerChoice(options));
     
-    playRound(humanScore, computerScore, round_counter)
-
-    if (humanScore > computerScore) {
-      alert ("Final result: you are the WINNER");
+    if (round === "Nice! You win ;)") {
+      humanScore++; 
+      console.log("Nice! You win ;)" + "you have: " + humanScore + " points, and the computer has: " + computerScore + " points.");
     
-    } else if (humanScore < computerScore) {
-      alert ("Final result: you lost, try again! :)");
+    } else if (round === "You lost dude ") {
+      computerScore++;
+      console.log ("You lost, try again! :). You have " + humanScore + " points. And the computer has " + computerScore + " points.");
     
     } else {
-      alert ("Final result: It's a tie");
+      console.log("Oh! It is a tie. You have: " + humanScore + " points" + " and the computer has: " + computerScore + " points")
     }
+    round_counter++;
   }
+
+  if (humanScore > computerScore) {
+    alert("YAYY! you won. Nice!")
+  
+  } else if (computerScore > humanScore) {
+    alert("Yoy lost the game. Try again :)")
+  
+  } else {
+    alert("It is a tie. Good play!")
+  }
+  
 }
 
+// final result ---> winner
 playGame(playRound);
