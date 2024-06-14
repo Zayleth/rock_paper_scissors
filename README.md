@@ -4,7 +4,7 @@
 
 > Rock, paper, scissors is a great way to make minor decisions when you and a friend can't agree on something, or even just an entertaining way to pass the time. It has easy to learn and understand rules, so the game is accessible to people of all ages. It keeps the excitement going in every round as there is no way to guarantee victory. This means that anyone can win, regardless of their skill level. However, you can try to develop certain strategies to increase your chances of winning, such as trying to read your opponent's signals or choosing a hand that you have chosen successfully in the past. Rock, Paper, Scissors is a simple, fun and versatile game that can be enjoyed by people of all ages. It is a classic game that has been enjoyed for generations and is sure to remain popular for many years to come.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./images/rock_paper_scissors.jpg)
 
 > RULES 
 - Rock crushes Scissors (Rock wins).
