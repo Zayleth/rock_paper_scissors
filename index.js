@@ -12,8 +12,19 @@ function getComputerChoice(options) {
 // Paso 3: Escribe la lógica para obtener la elección humana.
 
 function getHumanChoice() {
-  let humanChoice = prompt ("rock, paper, scissors: ");
-  return humanChoice.toLowerCase();
+  let humanChoice = prompt ("Play Game: rock, paper, scissors: ").toLowerCase();
+  
+  if (humanChoice === null) {
+    return null;
+  
+  } else if (humanChoice !== "rock"
+  && humanChoice !== "paper"
+  && humanChoice !== "scissors") {
+    alert ("Invalid character. Please enter rock, paper or scissors");
+    humanChoice = prompt ("Play Game: rock, paper, scissors: ");
+  }
+  
+  return humanChoice;
 }
 
 // Paso 4: declarar las variables globales de puntuación de los jugadores
@@ -36,11 +47,10 @@ function playRound (computerChoice, humanChoice) {
   } else if (humanChoice === "rock" && computerChoice === "scissors" 
   || humanChoice === "scissors" && computerChoice == "paper" 
   || humanChoice === "paper" && computerChoice === "rock") {
-
     return("Nice! You win ;)");
 
   } else {
-    return("You lost dude ");
+    return("You lost ");
   }
 }
 
@@ -66,23 +76,23 @@ function playGame (playRound) {
     
     if (round === "Nice! You win ;)") {
       humanScore++; 
-      console.log("Nice! You win ;)" + "you have: " + humanScore + " points, and the computer has: " + computerScore + " points.");
+      console.log("Nice! You win ;)" + " you have: " + humanScore + " ⭐, and the computer has: " + computerScore + " ⭐.");
     
-    } else if (round === "You lost dude ") {
+    } else if (round === "You lost ") {
       computerScore++;
-      console.log ("You lost, try again! :). You have " + humanScore + " points. And the computer has " + computerScore + " points.");
+      console.log ("You lost, try again!. You have " + humanScore + " ⭐. And the computer has " + computerScore + " ⭐.");
     
     } else {
-      console.log("Oh! It is a tie. You have: " + humanScore + " points" + " and the computer has: " + computerScore + " points")
+      console.log("Ohhh! It is a tie. You have: " + humanScore + " ⭐" + " and the computer has: " + computerScore + " ⭐")
     }
     round_counter++;
   }
 
   if (humanScore > computerScore) {
-    alert("YAYY! you won. Nice!")
+    alert("YAYYYY! YOU WON THE GAME. CONGRATULATIONS!")
   
   } else if (computerScore > humanScore) {
-    alert("Yoy lost the game. Try again :)")
+    alert("You lost the game. Try again :)")
   
   } else {
     alert("It is a tie. Good play!")
