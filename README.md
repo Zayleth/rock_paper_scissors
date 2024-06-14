@@ -24,8 +24,8 @@
 
 ## Getting Started
 
-Clone the repository in Git.
-Run it from a browser.
+- Clone the repository in Git.
+- Run it from a browser.
 
 
 ## Authors
