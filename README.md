@@ -6,7 +6,6 @@
 
 ![screenshot](./images/screen.jpg)
 ![screenshot](./images/screen1.jpg)
-![screenshot](./images/screen2.jpg)
 ![screenshot](./images/rock_paper_scissors.jpg)
 
 > RULES 
